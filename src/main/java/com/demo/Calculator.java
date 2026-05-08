@@ -7,6 +7,7 @@ public class Calculator extends JFrame implements ActionListener {
 
     JTextField t1, t2, result;
     JButton addButton;
+    Sum s = new Sum();
 
     public Calculator() {
 
@@ -43,17 +44,13 @@ public class Calculator extends JFrame implements ActionListener {
         setVisible(true);
     }
 
-    public int add(int a, int b) {
-        return a + b;
-    }
-
     @Override
     public void actionPerformed(ActionEvent e) {
 
         int num1 = Integer.parseInt(t1.getText());
         int num2 = Integer.parseInt(t2.getText());
 
-        int sum = add(num1, num2);
+        int sum = s.add(num1, num2);
 
         result.setText(String.valueOf(sum));
     }
